@@ -30,10 +30,16 @@ public:
 
 int main()
 {
-    /*Circle* figure = new Circle(1, 2, 5);
-    std::cout << figure->GetX() << " " << figure->GetY();*/
+    Figure* f1 = new ComplexFigure();
 
-    Parent* parent = new Child();
+    f1->Add(new Circle(0, 0, 10));
+    f1->Add(new Rectangle(0, 0, 10, 20));
+    std::cout << f1->Perimetr() << "\n";
 
-    delete parent;
+    Figure* f2 = new ComplexFigure();
+    f2->Add(new Circle(0, 0, 5));
+    std::cout << f2->Perimetr() << "\n";
+
+    f2->Add(f1);
+    std::cout << f2->Perimetr() << "\n";
 }
